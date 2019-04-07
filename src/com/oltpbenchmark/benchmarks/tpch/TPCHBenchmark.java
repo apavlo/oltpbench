@@ -55,10 +55,10 @@ public class TPCHBenchmark extends BenchmarkModule {
 
 	
 	/**
-	 * @param Bool
-	 */
+     * @param Bool
+     */
 	@Override
-	protected List<Worker<? extends BenchmarkModule>> makeWorkersImpl(boolean verbose) throws IOException {
+	protected List<Worker<? extends BenchmarkModule>> makeWorkersImpl() throws IOException {
 		List<Worker<? extends BenchmarkModule>> workers = new ArrayList<Worker<? extends BenchmarkModule>>();
 
 		int numTerminals = workConf.getTerminals();

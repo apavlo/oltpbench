@@ -41,7 +41,7 @@ public class MockBenchmark extends BenchmarkModule {
         return null;
     }
     @Override
-    protected List<Worker<? extends BenchmarkModule>> makeWorkersImpl(boolean verbose) throws IOException {
+    protected List<Worker<? extends BenchmarkModule>> makeWorkersImpl() throws IOException {
         // TODO Auto-generated method stub
         return null;
     }

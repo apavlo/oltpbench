@@ -49,7 +49,7 @@ public class TwitterBenchmark extends BenchmarkModule {
 	}
 
 	@Override
-	protected List<Worker<? extends BenchmarkModule>> makeWorkersImpl(boolean verbose) throws IOException {
+	protected List<Worker<? extends BenchmarkModule>> makeWorkersImpl() throws IOException {
 		TransactionSelector transSel = new TransactionSelector(
 		twitterConf.getTracefile(), 
 		twitterConf.getTracefile2(), 
