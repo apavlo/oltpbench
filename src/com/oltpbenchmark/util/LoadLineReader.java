@@ -14,7 +14,7 @@
  *  limitations under the License.                                            *
  ******************************************************************************/
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.util;
 
 import java.util.StringTokenizer;
 

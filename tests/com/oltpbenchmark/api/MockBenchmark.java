@@ -23,7 +23,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.oltpbenchmark.WorkloadConfiguration;
 import com.oltpbenchmark.types.DatabaseType;
 
 public class MockBenchmark extends BenchmarkModule {

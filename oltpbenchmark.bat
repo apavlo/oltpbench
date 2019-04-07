@@ -6,5 +6,5 @@ set "oltpbenchmark_cp=build;lib/c3p0-0.9.1.2.jar;lib/commons-cli-1.2.jar;lib/com
 
 REM echo %oltpbenchmark_cp%
 
-java -Xmx8G -cp %oltpbenchmark_cp% -Dlog4j.configuration=log4j.properties com.oltpbenchmark.DBWorkload %* 
+java -Xmx8G -cp %oltpbenchmark_cp% -Dlog4j.configuration=log4j.properties com.oltpbenchmark.OLTPBench %*
 

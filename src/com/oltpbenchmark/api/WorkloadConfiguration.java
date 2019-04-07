@@ -15,7 +15,7 @@
  ******************************************************************************/
 
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.api;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.oltpbenchmark.util.TraceReader;
 import org.apache.commons.collections15.map.ListOrderedMap;
 import org.apache.commons.configuration.XMLConfiguration;
 
-import com.oltpbenchmark.api.TransactionTypes;
 import com.oltpbenchmark.types.DatabaseType;
 import com.oltpbenchmark.util.StringUtil;
 import com.oltpbenchmark.util.ThreadUtil;

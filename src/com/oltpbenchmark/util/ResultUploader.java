@@ -16,7 +16,7 @@
 
 package com.oltpbenchmark.util;
 
-import com.oltpbenchmark.Results;
+import com.oltpbenchmark.api.Results;
 import com.oltpbenchmark.api.TransactionType;
 import com.oltpbenchmark.api.collectors.DBParameterCollector;
 import com.oltpbenchmark.api.collectors.DBParameterCollectorGen;

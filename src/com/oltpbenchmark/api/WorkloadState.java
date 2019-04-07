@@ -14,15 +14,20 @@
  *  limitations under the License.                                            *
  ******************************************************************************/
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.api;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.LinkedList;
 
+import com.oltpbenchmark.api.BenchmarkState;
+import com.oltpbenchmark.api.Phase;
+import com.oltpbenchmark.api.SubmittedProcedure;
+import com.oltpbenchmark.api.ThreadBench;
 import com.oltpbenchmark.types.State;
 import com.oltpbenchmark.util.QueueLimitException;
+import com.oltpbenchmark.util.TraceReader;
 import org.apache.log4j.Logger;
 
 /**

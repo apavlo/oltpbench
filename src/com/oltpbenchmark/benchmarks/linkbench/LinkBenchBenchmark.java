@@ -30,7 +30,7 @@ import java.util.Random;
 
 import org.apache.log4j.Logger;
 
-import com.oltpbenchmark.WorkloadConfiguration;
+import com.oltpbenchmark.api.WorkloadConfiguration;
 import com.oltpbenchmark.api.BenchmarkModule;
 import com.oltpbenchmark.api.Loader;
 import com.oltpbenchmark.api.Worker;

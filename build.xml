@@ -109,10 +109,11 @@
             <not><isset property="extra"/></not>
         </condition>
         
-        <java fork="yes" failonerror="true" classname="com.oltpbenchmark.DBWorkload">
+        <java fork="yes" failonerror="true" classname="com.oltpbenchmark.OLTPBench">
             <jvmarg value="-Xmx2048m" />
             <jvmarg value="-Dlog4j.configuration=${basedir}/log4j.properties"/>
             <jvmarg value="-client" />
+
             <arg line="-b ${benchmark}" />
             <arg line="-c ${config}" />
             <arg line="--create ${create}" />
@@ -235,10 +236,11 @@
             <not><isset property="config"/></not>
         </condition>
         
-        <java fork="yes" failonerror="true" classname="com.oltpbenchmark.DBWorkload">
+        <java fork="yes" failonerror="true" classname="com.oltpbenchmark.OLTPBench">
             <jvmarg value="-Xmx1024m" />
             <jvmarg value="-Dlog4j.configuration=${basedir}/log4j.properties"/>
             <jvmarg value="-client" />
+            
             <arg line="-b ${benchmark}" />
             <arg line="-c ${config}" />
             <arg line="--dialects-export true" />

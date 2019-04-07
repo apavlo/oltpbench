@@ -14,7 +14,7 @@
  *  limitations under the License.                                            *
  ******************************************************************************/
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.api;
 
 import java.util.ArrayList;
 import java.util.Collections;

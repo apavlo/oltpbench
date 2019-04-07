@@ -18,7 +18,7 @@ package com.oltpbenchmark.benchmarks.jpab;
 
 import org.apache.commons.configuration.XMLConfiguration;
 
-import com.oltpbenchmark.WorkloadConfiguration;
+import com.oltpbenchmark.api.WorkloadConfiguration;
 
 public class JPABConfiguration {
     

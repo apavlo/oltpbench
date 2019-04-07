@@ -15,7 +15,7 @@
  ******************************************************************************/
 
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.api;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -24,9 +24,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.oltpbenchmark.LatencyRecord.Sample;
-import com.oltpbenchmark.ThreadBench.TimeBucketIterable;
-import com.oltpbenchmark.api.TransactionType;
+import com.oltpbenchmark.api.LatencyRecord.Sample;
+import com.oltpbenchmark.api.ThreadBench.TimeBucketIterable;
+import com.oltpbenchmark.distributions.DistributionStatistics;
 import com.oltpbenchmark.util.Histogram;
 import com.oltpbenchmark.util.StringUtil;
 

@@ -14,7 +14,7 @@
  *  limitations under the License.                                            *
  ******************************************************************************/
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.api;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -34,12 +34,12 @@ public class SubmittedProcedure {
     private final int type;
     private final long startTime;
 
-    SubmittedProcedure(int type) {
+    public SubmittedProcedure(int type) {
         this.type = type;
         this.startTime = System.nanoTime();
     }
 
-    SubmittedProcedure(int type, long startTime) {
+    public SubmittedProcedure(int type, long startTime) {
         this.type = type;
         this.startTime = startTime;
     }

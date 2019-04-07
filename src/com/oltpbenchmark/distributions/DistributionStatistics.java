@@ -15,7 +15,7 @@
  ******************************************************************************/
 
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.distributions;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

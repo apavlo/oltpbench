@@ -15,7 +15,7 @@
  ******************************************************************************/
 
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.api;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,13 +29,12 @@ import java.util.Map.Entry;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
+import com.oltpbenchmark.util.TraceReader;
+import com.oltpbenchmark.distributions.DistributionStatistics;
 import org.apache.commons.collections15.map.ListOrderedMap;
 import org.apache.log4j.Logger;
 
-import com.oltpbenchmark.LatencyRecord.Sample;
-import com.oltpbenchmark.api.BenchmarkModule;
-import com.oltpbenchmark.api.TransactionType;
-import com.oltpbenchmark.api.Worker;
+import com.oltpbenchmark.api.LatencyRecord.Sample;
 import com.oltpbenchmark.types.State;
 import com.oltpbenchmark.util.Histogram;
 import com.oltpbenchmark.util.QueueLimitException;

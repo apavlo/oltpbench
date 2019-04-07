@@ -26,7 +26,6 @@ import org.apache.log4j.Logger;
 
 import junit.framework.TestCase;
 
-import com.oltpbenchmark.WorkloadConfiguration;
 import com.oltpbenchmark.catalog.Catalog;
 import com.oltpbenchmark.types.DatabaseType;
 import com.oltpbenchmark.util.ClassUtil;

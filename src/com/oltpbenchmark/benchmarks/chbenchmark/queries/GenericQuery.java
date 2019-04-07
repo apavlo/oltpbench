@@ -26,7 +26,6 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
-import com.oltpbenchmark.DBWorkload;
 import com.oltpbenchmark.api.Procedure;
 import com.oltpbenchmark.api.SQLStmt;
 import com.oltpbenchmark.api.Worker;

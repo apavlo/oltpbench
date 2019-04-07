@@ -27,6 +27,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+import com.oltpbenchmark.api.*;
+import com.oltpbenchmark.util.*;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -40,21 +42,10 @@ import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
 import org.apache.log4j.Logger;
 
-import com.oltpbenchmark.api.BenchmarkModule;
-import com.oltpbenchmark.api.TransactionType;
-import com.oltpbenchmark.api.TransactionTypes;
-import com.oltpbenchmark.api.Worker;
 import com.oltpbenchmark.types.DatabaseType;
-import com.oltpbenchmark.util.ClassUtil;
-import com.oltpbenchmark.util.FileUtil;
-import com.oltpbenchmark.util.QueueLimitException;
-import com.oltpbenchmark.util.ResultUploader;
-import com.oltpbenchmark.util.StringBoxUtil;
-import com.oltpbenchmark.util.StringUtil;
-import com.oltpbenchmark.util.TimeUtil;
 
-public class DBWorkload {
-    private static final Logger LOG = Logger.getLogger(DBWorkload.class);
+public class OLTPBench {
+    private static final Logger LOG = Logger.getLogger(OLTPBench.class);
     
     private static final String SINGLE_LINE = StringUtil.repeat("=", 70);
     

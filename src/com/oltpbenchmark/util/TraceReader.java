@@ -14,15 +14,14 @@
  *  limitations under the License.                                            *
  ******************************************************************************/
 
-package com.oltpbenchmark;
+package com.oltpbenchmark.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Iterator;
 import java.util.ListIterator;
-import java.util.List;
 import java.util.LinkedList;
 
+import com.oltpbenchmark.api.SubmittedProcedure;
 import org.apache.log4j.Logger;
 
 /**

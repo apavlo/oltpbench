@@ -33,7 +33,6 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-import com.oltpbenchmark.WorkloadConfiguration;
 import com.oltpbenchmark.api.Loader.LoaderThread;
 import com.oltpbenchmark.catalog.Catalog;
 import com.oltpbenchmark.catalog.Table;
