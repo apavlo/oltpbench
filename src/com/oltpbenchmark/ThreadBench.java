@@ -342,7 +342,7 @@ public class ThreadBench implements Thread.UncaughtExceptionHandler {
         boolean lastEntry = false;
 
         // Initialize the Monitor
-        if(this.intervalMonitor > 0 ) {
+        if (this.intervalMonitor > 0 ) {
             new MonitorThread(this.intervalMonitor).start();
         }
 

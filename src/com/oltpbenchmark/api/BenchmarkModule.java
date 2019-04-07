@@ -233,7 +233,7 @@ public abstract class BenchmarkModule {
         return (null);
     }
 
-    public final List<Worker<? extends BenchmarkModule>> makeWorkers(boolean verbose) throws IOException {
+    public final List<Worker<? extends BenchmarkModule>> makeWorkers() throws IOException {
         return (this.makeWorkersImpl());
     }
 

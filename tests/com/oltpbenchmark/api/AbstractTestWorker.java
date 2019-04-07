@@ -47,7 +47,7 @@ public abstract class AbstractTestWorker<T extends BenchmarkModule> extends Abst
         this.workConf.setTransTypes(txnTypes);
         
         this.workConf.setTerminals(NUM_TERMINALS);
-        this.workers = this.benchmark.makeWorkers(false);
+        this.workers = this.benchmark.makeWorkers();
         assertNotNull(this.workers);
         assertEquals(NUM_TERMINALS, this.workers.size());
     }

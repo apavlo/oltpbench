@@ -130,6 +130,7 @@ public class DBWorkload {
                 true,
                 "Upload the result");
 
+        options.addOption(null, "disable-stats", true, "Whether to disable stats collection");
         options.addOption("v", "verbose", false, "Display Messages");
         options.addOption("h", "help", false, "Print this help");
         options.addOption("s", "sample", true, "Sampling window");
@@ -160,14 +161,18 @@ public class DBWorkload {
             return;
         }
         
-        
-        
         // Seconds
         int intervalMonitor = 0;
         if (argsLine.hasOption("im")) {
             intervalMonitor = Integer.parseInt(argsLine.getOptionValue("im"));
         }
-        
+
+        // Enable/Disable Stats Collection
+        boolean collectStats = true;
+        if (argsLine.hasOption("disable-stats")) {
+            collectStats = false;
+        }
+
         // -------------------------------------------------------------------
         // GET PLUGIN LIST
         // -------------------------------------------------------------------
@@ -470,8 +475,8 @@ public class DBWorkload {
                               weight_strings,
                               rateLimited,
                               disabled,
-                        serial,
-                        timed,
+                              serial,
+                              timed,
                               activeTerminals,
                               arrival);
             } // FOR
@@ -513,14 +518,11 @@ public class DBWorkload {
         }
 
         
-        @Deprecated
-        boolean verbose = argsLine.hasOption("v");
-
         // Create the Benchmark's Database
         if (isBooleanOptionSet(argsLine, "create")) {
             for (BenchmarkModule benchmark : benchList) {
                 LOG.info("Creating new " + benchmark.getBenchmarkName().toUpperCase() + " database...");
-                runCreator(benchmark, verbose);
+                runCreator(benchmark);
                 LOG.info("Finished!");
                 LOG.info(SINGLE_LINE);
             }
@@ -546,7 +548,7 @@ public class DBWorkload {
         if (isBooleanOptionSet(argsLine, "load")) {
             for (BenchmarkModule benchmark : benchList) {
                 LOG.info("Loading data into " + benchmark.getBenchmarkName().toUpperCase() + " database...");
-                runLoader(benchmark, verbose);
+                runLoader(benchmark);
                 LOG.info("Finished!");
                 LOG.info(SINGLE_LINE);
             }
@@ -571,7 +573,7 @@ public class DBWorkload {
             // Bombs away!
             Results r = null;
             try {
-                r = runWorkload(benchList, verbose, intervalMonitor);
+                r = runWorkload(benchList, intervalMonitor, collectStats);
             } catch (Throwable ex) {
                 LOG.error("Unexpected error when running benchmarks.", ex);
                 System.exit(1);
@@ -803,22 +805,22 @@ public class DBWorkload {
         bench.runScript(script);
     }
 
-    private static void runCreator(BenchmarkModule bench, boolean verbose) {
+    private static void runCreator(BenchmarkModule bench) {
         LOG.debug(String.format("Creating %s Database", bench));
         bench.createDatabase();
     }
     
-    private static void runLoader(BenchmarkModule bench, boolean verbose) {
+    private static void runLoader(BenchmarkModule bench) {
         LOG.debug(String.format("Loading %s Database", bench));
         bench.loadDatabase();
     }
 
-    private static Results runWorkload(List<BenchmarkModule> benchList, boolean verbose, int intervalMonitor) throws QueueLimitException, IOException {
+    private static Results runWorkload(List<BenchmarkModule> benchList, int intervalMonitor, boolean collectStats) throws QueueLimitException, IOException {
         List<Worker<?>> workers = new ArrayList<Worker<?>>();
         List<WorkloadConfiguration> workConfs = new ArrayList<WorkloadConfiguration>();
         for (BenchmarkModule bench : benchList) {
             LOG.info("Creating " + bench.getWorkloadConfiguration().getTerminals() + " virtual terminals...");
-            workers.addAll(bench.makeWorkers(verbose));
+            workers.addAll(bench.makeWorkers());
             // LOG.info("done.");
             
             int num_phases = bench.getWorkloadConfiguration().getNumberOfPhases();
